@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">AlertDialog</string>
+    <string name="enter_data">Enter data...</string>
+    <string name="enter_Roll">Roll no.</string>
+</resources>
