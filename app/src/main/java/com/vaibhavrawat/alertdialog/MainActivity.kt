@@ -16,6 +16,7 @@ import kotlin.math.floor
 class MainActivity : AppCompatActivity() {
     lateinit var binding : ActivityMainBinding
     //var ran :String?=""
+    //var btnSave : Button?= null
 
    // var random = Math.random()
 
@@ -34,6 +35,7 @@ class MainActivity : AppCompatActivity() {
 
             val dialog = Dialog(this)
             dialog.setContentView(R.layout.dialog_layout)
+            //btnSave = findViewById(R.id.btnSave)
             var etName : EditText ?= null
             var etRollNo : EditText ?= null
             var btnSave : Button ?= null
@@ -43,9 +45,9 @@ class MainActivity : AppCompatActivity() {
 
             btnSave?.setOnClickListener {
                // Toast.makeText(this,"hey",Toast.LENGTH_SHORT).show()
-                if (etName.toString().isEmpty() || etRollNo.toString().isEmpty()) {
-                  error("Please Enter your name and Roll no.")
-
+                if (etName.toString().isEmpty()|| etRollNo.toString().isEmpty()) {
+                    binding.tvName.text = "Name :"
+                    binding.tvRoll.text = "Roll No :"
               } else {
                     binding.tvName.text = etName.text.toString()
                     binding.tvRoll.text = etRollNo.text.toString()
@@ -73,5 +75,7 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, RandomCharacterGenerator::class.java)
             startActivity(intent)
         }
+
+
     }
 }
